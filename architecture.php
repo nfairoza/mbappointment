@@ -13,10 +13,7 @@
 	<div class="row">
 		<div class="col-md-12">
       <?php include('menu.php'); ?>
-
-
-
-			<div class="jumbotron">
+			<div class="normaltron">
 
         <?php include ('get-image.php');?>
 

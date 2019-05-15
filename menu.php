@@ -7,7 +7,7 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav">
     <li>
-      <a href="Architecture.php"><i class="fas fa-sitemap"></i> Architecture</a>
+      <a href="architecture.php"><i class="fas fa-sitemap"></i> Architecture</a>
     </li>
   </ul>
 </div>
