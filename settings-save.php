@@ -17,7 +17,7 @@
       <div class="jumbotron">
 
       <?php
-      
+
         # Extract fields from input form
         $ep = $_POST['endpoint'];
       	$ep = str_replace(":3306", "", $ep);
@@ -28,15 +28,15 @@
         # Store settings in Parameter Store
         error_log('Saving settings');
         require 'aws-autoloader.php';
-  
+
         $az = file_get_contents('http://169.254.169.254/latest/meta-data/placement/availability-zone');
         $region = substr($az, 0, -1);
-        
+
         $ssm_client = new Aws\Ssm\SsmClient([
           'version' => 'latest',
           'region'  => $region
         ]);
-        
+
         # Save settings in Parameter Store
         $result = $ssm_client->putParameter([
           'Name' => '/inventory-app/endpoint',
@@ -82,9 +82,9 @@
           } else {
             # Load initial data
             echo "<br /><p>Loading initial data...</p>";
-            exec("mysql -u $un -p$pw -h $ep $db < sql/inventory.sql");
+            exec("mysql -u $un -p$pw -h $ep $db < sql/schedule.sql");
           }
-          
+
           # Send them back to home page
           echo "<script>window.location.href ='/';</script>";
 
